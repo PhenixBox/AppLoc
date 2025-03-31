@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        // Récupérer les données du formulaire
         const firstName = document.getElementById("first-name").value;
         const lastName = document.getElementById("last-name").value;
         const email = document.getElementById("email").value;
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const boxSize = document.getElementById("box-size").value;
         const insuranceType = document.getElementById("insurance-type").value;
 
-        // Stocker les informations dans localStorage
+        // Stocker les informations dans le localStorage
         localStorage.setItem("firstName", firstName);
         localStorage.setItem("lastName", lastName);
         localStorage.setItem("email", email);
@@ -20,8 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem("boxSize", boxSize);
         localStorage.setItem("insuranceType", insuranceType);
 
-        window.location.href = "page2.html"; // Rediriger vers la page 2
+        // Rediriger vers la page 2
+        window.location.href = "page2.html"; // Redirection vers la page 2
     });
+});
+
 
     // Page 2 : Collecte des informations bancaires
     const paymentForm = document.getElementById("payment-form");
