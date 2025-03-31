@@ -34,3 +34,31 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         // Logique pour traiter les informations bancaires via Stripe
         window.location.href = "page3.html";
+
+        document.addEventListener('DOMContentLoaded', function () {
+    // Page 3 : Récapitulatif de la commande
+    if (window.location.href.includes('page3.html')) {
+        // Récupérer les informations du localStorage
+        const firstName = localStorage.getItem("firstName");
+        const lastName = localStorage.getItem("lastName");
+        const email = localStorage.getItem("email");
+        const address = localStorage.getItem("address");
+        const boxSize = localStorage.getItem("boxSize");
+        const insuranceType = localStorage.getItem("insuranceType");
+
+        // Afficher le récapitulatif
+        document.getElementById("full-name").textContent = `${firstName} ${lastName}`;
+        document.getElementById("email-summary").textContent = email;
+        document.getElementById("address-summary").textContent = address;
+        document.getElementById("box-summary").textContent = boxSize === "15" ? "15 m² - 90€" : "30 m² - 120€";
+        document.getElementById("insurance-summary").textContent = insuranceType;
+
+        // Calculer le montant total
+        let totalAmount = (boxSize === "15" ? 90 : 120);
+        if (insuranceType === "simple") totalAmount += 10;
+        if (insuranceType === "moyenne") totalAmount += 20;
+        if (insuranceType === "premium") totalAmount += 30;
+        document.getElementById("total-summary").textContent = totalAmount;
+    }
+});
+
