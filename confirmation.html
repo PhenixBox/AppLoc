@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récapitulatif de la commande</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Récapitulatif de la commande</h1>
+        
+        <div id="order-summary">
+            <p><strong>Nom:</strong> <span id="full-name"></span></p>
+            <p><strong>Email:</strong> <span id="email-summary"></span></p>
+            <p><strong>Adresse de facturation:</strong> <span id="address-summary"></span></p>
+            <p><strong>Taille du Box:</strong> <span id="box-summary"></span></p>
+            <p><strong>Type d'assurance:</strong> <span id="insurance-summary"></span></p>
+            <p><strong>Montant Total:</strong> <span id="total-summary"></span> €</p>
+        </div>
+
+        <!-- Case à cocher pour accepter les CGU et CGV -->
+        <div class="form-group">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">J'ai lu et j'accepte les <a href="#">CGU</a> et <a href="#">CGV</a></label>
+        </div>
+
+        <button id="confirm-btn" class="btn">Valider</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
